@@ -40,10 +40,21 @@ export default class Content extends Component {
   };
 
   filterCards = () => {
-    // let array = [];
-    // if(this.state.selected === 'all'){
+     let array = [];
+     if(this.state.selected === 'all'){
+         return array = this.state.cards
+     }  
 
-    // }
+        else {
+          array = this.state.cards.filter(card => {
+            if (card.tab === this.state.selected )
+              
+                return array
+              
+          })
+      
+        
+     }
     
     /* Right now this function only returns the cards on state.
       We're going to make this function more dynamic
@@ -74,6 +85,7 @@ export default class Content extends Component {
           selectTabHandler={this.selectTabHandler}
         />
         <Cards cards={this.filterCards()} />
+      
       </div>
     );
   }
