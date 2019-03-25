@@ -23,13 +23,15 @@ export default class Content extends Component {
     })
   }
   
-  selectTabHandler = (event) => {
-    const tab = this.state.tabs.filter(tab => {
-      if (tab.tab === event.target.value) {
-        return tab;
+  selectTabHandler = (clickedTab) => {
+    let tab = '';
+    this.state.tabs.map(tab => {
+      if (tab.tab === clickedTab) {
+         return tab = clickedTab
       }
+      console.log(tab);
     })
-    this.setState({ selected: tab})
+    this.setState({selected: tab})
   }
 
 

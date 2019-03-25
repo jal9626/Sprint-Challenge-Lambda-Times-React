@@ -10,7 +10,7 @@ const Cards = props => {
           {props.cards.map(card => 
             <Card 
               card = {card}
-              key ={card.img}
+              key ={card.headline}
             />
           )
           }
