@@ -3,16 +3,17 @@ import Tab from './Tab';
 
 const Tabs = props => {
   
-  
+ 
+
   return (
     <div className="tabs">
       <div className="topics">
         <span className="title">TRENDING TOPICS:</span>
-        {props.tabs.map(tab => 
-          <Tab 
+        {props.tabs.map((tab, index) => 
+        <Tab 
             tab = {tab}
-            key= {tab.img}
-          
+            key = {index}
+            selectTabHandler={props.selectTabHandler}
           />
           )}
         
