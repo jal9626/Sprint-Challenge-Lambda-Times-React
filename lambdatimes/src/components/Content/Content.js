@@ -23,8 +23,8 @@ export default class Content extends Component {
     })
   }
   
-  selectTabHandler = event => {
-    const tab = this.state.tabs.filter(tab => {
+  selectTabHandler = (event, tab) => {
+    tab = this.state.tabs.filter(tab => {
       if (tab.tab === event.target.value) {
         return tab;
       }
