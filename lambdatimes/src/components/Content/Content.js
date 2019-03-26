@@ -24,22 +24,24 @@ export default class Content extends Component {
   }
   
   selectTabHandler = (clickedTab) => {
-    let tab = '';
-    this.state.tabs.map(tab => {
-      if (tab.tab === clickedTab) {
-         return tab = clickedTab
+    let selectedTab = '';
+    this.state.tabs.filter(tab => {
+      if (tab === clickedTab) {
+         return selectedTab = clickedTab;
       }
-      console.log(tab);
+      console.log(selectedTab);
     })
-    this.setState({selected: tab})
+    this.setState({selected: selectedTab})
   }
 
 
 
   changeSelected = tab => {
-    // this function should take in the tab and update the state with the new tab.
+     // this function should take in the tab and update the state with the new tab.
     
   };
+
+ 
 
   filterCards = () => {
      let array = [];
@@ -55,7 +57,6 @@ export default class Content extends Component {
               
           })
       
-        
      }
     
     /* Right now this function only returns the cards on state.
@@ -70,8 +71,11 @@ export default class Content extends Component {
           of the items from cardData. 
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
-    return this.state.cards;
+     return array;
+
   };
+
+  
 
   render() {
     return (
@@ -85,6 +89,7 @@ export default class Content extends Component {
           tabs={this.state.tabs} 
           selectedTab ={this.state.selected}
           selectTabHandler={this.selectTabHandler}
+          changeSelected={this.changeSelected}
         />
         <Cards cards={this.filterCards()} />
       
